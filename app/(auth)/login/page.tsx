@@ -1,8 +1,9 @@
+import FormLogin from "@/components/FormLogin"
 
 
 const LoginPage = () => {
   return (
-    <div>LoginPage</div>
+    <FormLogin />
   )
 }
 

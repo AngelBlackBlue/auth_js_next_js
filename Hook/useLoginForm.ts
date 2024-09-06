@@ -7,7 +7,7 @@ import { loginSchema } from "@/validators/login.zod";
 
 
 export const useLoginForm = () => {
- const { handleSingin } = useLogin();
+//  const { handleSingin } = useLogin();
 
   const form = useForm<z.infer<typeof loginSchema >>({
     resolver: zodResolver(loginSchema ),
@@ -19,7 +19,7 @@ export const useLoginForm = () => {
 
   const onSubmit = (values: z.infer<typeof loginSchema >) => {
     console.log(values);
-    handleSingin(values);
+    // handleSingin(values);
     
   };
 
