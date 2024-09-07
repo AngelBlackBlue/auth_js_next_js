@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:12.20-bullseye
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${AUTH_TYPEORM_USERNAME}
+      POSTGRES_PASSWORD: ${AUTH_TYPEORM_PASSWORD}
+      POSTGRES_DB: ${AUTH_TYPEORM_DB}
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
