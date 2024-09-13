@@ -1,7 +1,7 @@
 
 const HomrPage = () => {
   return (
-    <div>page</div>
+    <div>page aas</div>
   )
 }
 
