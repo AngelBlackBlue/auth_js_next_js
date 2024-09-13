@@ -20,9 +20,9 @@ const FormLogin = () => {
 
   return (
     <div className="flex items-center justify-center w-full pt-40 ">
-      <div className="w-96 rounded-md border px-6 py-8 bg-slate-900 opacity-95 ">
+      <div className="w-96 rounded-md border px-6 py-8 bg-[#25091d]/90 ">
         <h1 className="text-2xl font-bold flex justify-center pb-6">
-          Sign in to your account 😎
+          Loginin to your account 😎
         </h1>
 
         <div className="pt-2">
@@ -65,7 +65,7 @@ const FormLogin = () => {
               />
 
               <div className="pt-4 flex justify-center">
-                <Button type="submit">Submit</Button>
+                <Button type="submit" className=" bg-[#791b6b]">Submit</Button>
               </div>
             </form>
           </Form>
