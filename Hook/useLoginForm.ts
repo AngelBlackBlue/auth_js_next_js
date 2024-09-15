@@ -2,9 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { loginSchema } from "@/validators/login.zod";
-import { loginAction } from "@/actions/loginAction";
-import { signIn } from "next-auth/react"
-
+import { signIn } from "next-auth/react" // del lado del client
 
 export const useLoginForm = () => {
 
@@ -23,8 +21,7 @@ export const useLoginForm = () => {
       password: values.password,
       redirect: false,
     })
-  
-    
+      
   };
 
   return {
