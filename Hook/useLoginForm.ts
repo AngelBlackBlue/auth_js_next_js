@@ -1,13 +1,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import useLogin from "@/Hook/useLogin";
 import { loginSchema } from "@/validators/login.zod";
-
+import { loginAction } from "@/actions/loginAction";
+import { signIn } from "next-auth/react"
 
 
 export const useLoginForm = () => {
-//  const { handleSingin } = useLogin();
 
   const form = useForm<z.infer<typeof loginSchema >>({
     resolver: zodResolver(loginSchema ),
@@ -17,9 +16,14 @@ export const useLoginForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof loginSchema >) => {
-    console.log(values);
-    // handleSingin(values);
+  const onSubmit = async (values: z.infer<typeof loginSchema >) => {
+    //  await loginAction(values);
+    await signIn("credentials", {
+      email: values.email,
+      password: values.password,
+      redirect: false,
+    })
+  
     
   };
 
@@ -28,3 +32,6 @@ export const useLoginForm = () => {
     onSubmit,
   };
 };
+
+
+
