@@ -1,4 +1,5 @@
 import { auth } from "@/auth"
+import {ButtonLogout} from "@/components/ButtonLogout"
  
 const DashboardPage = async() => {
   const session = await auth()
@@ -8,8 +9,17 @@ const DashboardPage = async() => {
   }
  
   return (
+    <div className="relative z-10">
+
     <div className="container">
-        <pre>{JSON.stringify(session, null, 2)}</pre> //session, filtro, identación
+        {/* session, filtro, identación */}
+        <pre>{JSON.stringify(session, null, 2)}</pre> 
+        
+    </div>
+    <div>
+        <ButtonLogout />
+
+    </div>
     </div>
   )
 }
