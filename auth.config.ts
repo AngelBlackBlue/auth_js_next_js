@@ -14,9 +14,13 @@ export default {
 
             const { data, success } = loginSchema.safeParse(credentials)
 
+            console.log(data, "hola soy data")
+
             if (!success) {
               throw new Error("Invalid credentials")
             }
+
+            console.log(data)
 
             const user = await prisma.user.findUnique({
               where: {

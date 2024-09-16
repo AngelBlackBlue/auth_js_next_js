@@ -16,7 +16,7 @@ import { useLoginForm} from "@/Hook/useLoginForm";
 
 const FormLogin = () => {
 
-  const { form, onSubmit } = useLoginForm();
+  const { form, onSubmit, isPending, error } = useLoginForm();
 
   return (
     <div className="flex items-center justify-center w-full pt-40 ">
@@ -63,9 +63,12 @@ const FormLogin = () => {
                   </FormItem>
                 )}
               />
+              {
+                error && <FormMessage>{error}</FormMessage>
+              }
 
               <div className="pt-4 flex justify-center">
-                <Button type="submit" className=" bg-[#791b6b]">Submit</Button>
+                <Button type="submit" className=" bg-[#791b6b]" disabled={isPending}>Submit</Button>
               </div>
             </form>
           </Form>
