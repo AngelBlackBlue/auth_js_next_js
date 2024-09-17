@@ -11,12 +11,12 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { LockKeyhole, Mail } from "lucide-react";
-import { useLoginForm} from "@/Hook/useLoginForm";
+import { LockKeyhole, Mail, Smile } from "lucide-react";
+import { useRegisterForm } from "@/Hook/useRegisterForm";
 
-const FormLogin = () => {
+const FormRegister = () => {
 
-  const { form, onSubmit, isPending, error } = useLoginForm();
+  const { form, onSubmit, isPending, error } = useRegisterForm();
 
   return (
     <div className="flex items-center justify-center w-full pt-40 ">
@@ -30,11 +30,11 @@ const FormLogin = () => {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField
                 control={form.control}
-                name="email"
+                name="name"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="flex items-center">
-                      <Mail className=" pr-2" /> name
+                      <Smile className=" pr-2" /> name
                     </FormLabel>
                     <FormControl>
                       <Input placeholder="write your name" {...field} />
@@ -97,4 +97,4 @@ const FormLogin = () => {
   );
 };
 
-export default FormLogin;
+export default FormRegister;

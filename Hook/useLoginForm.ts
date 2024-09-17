@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { loginSchema } from "@/validators/login.zod";
 //import { signIn } from "next-auth/react" // del lado del client
- import { loginAction } from "@/actions/authActions";
+ import { loginAction } from "@/actions/loginAction";
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { AuthError } from "next-auth";
