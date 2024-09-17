@@ -2,12 +2,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { registerSchema  } from "@/validators/register.zod";
-import { loginAction } from "@/actions/authActions";
+import { registerAction } from "@/actions/registerAction";
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 
 
-export const useLoginForm = () => {
+export const useRegisterForm = () => {
 
   const [isPending, startTransition] = useTransition()
   const [ error, setError ] = useState<string | null>(null)
@@ -30,7 +30,7 @@ export const useLoginForm = () => {
 
     startTransition( async() => {
       
-        const response = await loginAction(values);
+        const response = await registerAction(values);
       
       if (response.error) {
         

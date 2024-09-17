@@ -1,8 +1,9 @@
+import FormRegister from "@/components/FormRegister"
 
 
 const RegisterPage = () => {
   return (
-    <div>RegisterPage</div>
+    <FormRegister/>
   )
 }
 
