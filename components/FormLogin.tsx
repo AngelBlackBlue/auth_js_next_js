@@ -11,12 +11,18 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { LockKeyhole, Mail } from "lucide-react";
+import { LockKeyhole, Mail, Eye, EyeOff } from "lucide-react";
 import { useLoginForm} from "@/Hook/useLoginForm";
+import { useState } from "react";
 
 const FormLogin = () => {
 
   const { form, onSubmit, isPending, error } = useLoginForm();
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <div className="flex items-center justify-center w-full pt-40 ">
@@ -55,14 +61,27 @@ const FormLogin = () => {
                       <LockKeyhole className=" pr-2" /> password
                     </FormLabel>
                     <FormControl>
-                      <Input placeholder="your password" {...field} />
+                      <Input         type={showPassword ? "text" : "password"} 
+                           placeholder="your password" {...field}  />
+                           
+
                     </FormControl>
+                    {/* <button
+        type="button"
+        onClick={togglePasswordVisibility}
+        className="relative "
+      >
+        {showPassword ? <EyeOff/> : <Eye/>}
+      </button> */}
+
                     <FormDescription className="absolute ">
                       <FormMessage />
                     </FormDescription>
                   </FormItem>
                 )}
               />
+
+
               {
                 error && <FormMessage>{error}</FormMessage>
               }
