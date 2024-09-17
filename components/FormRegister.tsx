@@ -81,6 +81,7 @@ const FormRegister = () => {
                   </FormItem>
                 )}
               />
+              
               {
                 error && <FormMessage>{error}</FormMessage>
               }
