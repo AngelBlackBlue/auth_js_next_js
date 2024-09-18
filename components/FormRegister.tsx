@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -11,12 +11,18 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { LockKeyhole, Mail, Smile } from "lucide-react";
+import { LockKeyhole, Mail, Smile, Eye, EyeOff } from "lucide-react";
 import { useRegisterForm } from "@/Hook/useRegisterForm";
+import { useState } from "react";
 
 const FormRegister = () => {
-
   const { form, onSubmit, isPending, error } = useRegisterForm();
+
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <div className="flex items-center justify-center w-full pt-40 ">
@@ -69,25 +75,43 @@ const FormRegister = () => {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="flex items-center">
-                      <LockKeyhole className=" pr-2" /> password
+                    <FormLabel className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <LockKeyhole className="pr-2" />
+                        Password
+                      </div>
+                      <button
+                        type="button"
+                        onClick={togglePasswordVisibility}
+                        className="flex items-center -mb-[4.8rem] mr-2"
+                      >
+                        {showPassword ? <EyeOff /> : <Eye />}
+                      </button>
                     </FormLabel>
                     <FormControl>
-                      <Input placeholder="your password" {...field} />
+                      <Input
+                        type={showPassword ? "text" : "password"}
+                        placeholder="your password"
+                        {...field}
+                      />
                     </FormControl>
-                    <FormDescription className="absolute ">
+                    <FormDescription>
                       <FormMessage />
                     </FormDescription>
                   </FormItem>
                 )}
               />
-              
-              {
-                error && <FormMessage>{error}</FormMessage>
-              }
+
+              {error && <FormMessage>{error}</FormMessage>}
 
               <div className="pt-4 flex justify-center">
-                <Button type="submit" className=" bg-[#791b6b]" disabled={isPending}>Submit</Button>
+                <Button
+                  type="submit"
+                  className=" bg-[#791b6b]"
+                  disabled={isPending}
+                >
+                  Submit
+                </Button>
               </div>
             </form>
           </Form>
