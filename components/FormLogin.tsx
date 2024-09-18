@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -12,11 +12,10 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { LockKeyhole, Mail, Eye, EyeOff } from "lucide-react";
-import { useLoginForm} from "@/Hook/useLoginForm";
+import { useLoginForm } from "@/Hook/useLoginForm";
 import { useState } from "react";
 
 const FormLogin = () => {
-
   const { form, onSubmit, isPending, error } = useLoginForm();
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -57,37 +56,43 @@ const FormLogin = () => {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="flex items-center">
-                      <LockKeyhole className=" pr-2" /> password
+                    <FormLabel className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <LockKeyhole className="pr-2" />
+                        Password
+                      </div>
+                      <button
+                        type="button"
+                        onClick={togglePasswordVisibility}
+                        className="flex items-center -mb-[4.8rem] mr-2"
+                      >
+                        {showPassword ? <EyeOff /> : <Eye />}
+                      </button>
                     </FormLabel>
                     <FormControl>
-                      <Input         type={showPassword ? "text" : "password"} 
-                           placeholder="your password" {...field}  />
-                           
-
+                      <Input
+                        type={showPassword ? "text" : "password"}
+                        placeholder="your password"
+                        {...field}
+                      />
                     </FormControl>
-                    {/* <button
-        type="button"
-        onClick={togglePasswordVisibility}
-        className="relative "
-      >
-        {showPassword ? <EyeOff/> : <Eye/>}
-      </button> */}
-
-                    <FormDescription className="absolute ">
+                    <FormDescription>
                       <FormMessage />
                     </FormDescription>
                   </FormItem>
                 )}
               />
 
-
-              {
-                error && <FormMessage>{error}</FormMessage>
-              }
+              {error && <FormMessage>{error}</FormMessage>}
 
               <div className="pt-4 flex justify-center">
-                <Button type="submit" className=" bg-[#791b6b]" disabled={isPending}>Submit</Button>
+                <Button
+                  type="submit"
+                  className=" bg-[#791b6b]"
+                  disabled={isPending}
+                >
+                  Submit
+                </Button>
               </div>
             </form>
           </Form>
