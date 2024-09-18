@@ -12,4 +12,8 @@ export const registerSchema = object({
     .min(1, "Password is required")
     .min(8, "Password must be more than 8 characters")
     .max(12, "Password must be less than 18 characters"),
+  confirmPassword: string({ required_error: "Confirm password is required" })
+    .min(1, "Password is required")
+    .min(8, "Password must be more than 8 characters")
+    .max(12, "Password must be less than 18 characters"),
 })

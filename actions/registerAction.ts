@@ -31,6 +31,13 @@ export const registerAction = async (values: z.infer<typeof registerSchema >) =>
             }
         }
 
+        if (data.password !== data.confirmPassword) {
+            
+            return {
+                error: "Passwords do not match"
+            }
+        }
+
         const passwordHash = await bcrypt.hash(data.password, 10)
 
         await prisma.user.create({

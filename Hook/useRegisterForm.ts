@@ -20,6 +20,7 @@ export const useRegisterForm = () => {
       name:"",
       email: "",
       password: "",
+      confirmPassword:""
     },
   });
 
