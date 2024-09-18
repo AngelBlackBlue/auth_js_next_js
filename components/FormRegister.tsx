@@ -102,6 +102,38 @@ const FormRegister = () => {
                 )}
               />
 
+              <FormField
+                control={form.control}
+                name="confirmPassword"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <LockKeyhole className="pr-2" />
+                        Password
+                      </div>
+                      <button
+                        type="button"
+                        onClick={togglePasswordVisibility}
+                        className="flex items-center -mb-[4.8rem] mr-2"
+                      >
+                        {showPassword ? <EyeOff /> : <Eye />}
+                      </button>
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        type={showPassword ? "text" : "password"}
+                        placeholder="confirm your password"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      <FormMessage />
+                    </FormDescription>
+                  </FormItem>
+                )}
+              />
+
               {error && <FormMessage>{error}</FormMessage>}
 
               <div className="pt-4 flex justify-center">
