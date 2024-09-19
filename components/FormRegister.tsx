@@ -13,16 +13,20 @@ import {
 import { Input } from "@/components/ui/input";
 import { LockKeyhole, Mail, Smile, Eye, EyeOff } from "lucide-react";
 import { useRegisterForm } from "@/Hook/useRegisterForm";
-import { useState } from "react";
 
 const FormRegister = () => {
-  const { form, onSubmit, isPending, error } = useRegisterForm();
-
-  const [showPassword, setShowPassword] = useState<boolean>(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+  const {
+    form,
+    onSubmit,
+    isPending,
+    error,
+    showPassword,
+    setShowPassword,
+    ShowConfirmPassword,
+    setShowConfirmPassword,
+    togglePasswordVisibility,
+    toggleConfirmPasswordVisibility,
+  } = useRegisterForm();
 
   return (
     <div className="flex items-center justify-center w-full pt-40 ">
@@ -114,15 +118,15 @@ const FormRegister = () => {
                       </div>
                       <button
                         type="button"
-                        onClick={togglePasswordVisibility}
+                        onClick={toggleConfirmPasswordVisibility}
                         className="flex items-center -mb-[4.8rem] mr-2"
                       >
-                        {showPassword ? <EyeOff /> : <Eye />}
+                        {ShowConfirmPassword ? <EyeOff /> : <Eye />}
                       </button>
                     </FormLabel>
                     <FormControl>
                       <Input
-                        type={showPassword ? "text" : "password"}
+                        type={ShowConfirmPassword ? "text" : "password"}
                         placeholder="confirm your password"
                         {...field}
                       />
