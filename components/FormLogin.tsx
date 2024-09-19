@@ -13,16 +13,17 @@ import {
 import { Input } from "@/components/ui/input";
 import { LockKeyhole, Mail, Eye, EyeOff } from "lucide-react";
 import { useLoginForm } from "@/Hook/useLoginForm";
-import { useState } from "react";
 
 const FormLogin = () => {
-  const { form, onSubmit, isPending, error } = useLoginForm();
-  const [showPassword, setShowPassword] = useState<boolean>(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
+  const {
+    form,
+    onSubmit,
+    isPending,
+    error,
+    showPassword,
+    setShowPassword,
+    togglePasswordVisibility,
+  } = useLoginForm();
   return (
     <div className="flex items-center justify-center w-full pt-40 ">
       <div className="w-96 rounded-md border px-6 py-8 bg-[#25091d]/90 ">
