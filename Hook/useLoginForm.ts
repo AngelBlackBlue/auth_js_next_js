@@ -27,6 +27,10 @@ export const useLoginForm = () => {
     },
   });
 
+  const routerRegister = () => {
+    router.push("/register");
+  }
+
   // const loginAction = async (values: z.infer<typeof loginSchema >) => {
 
   //   try {
@@ -75,5 +79,6 @@ export const useLoginForm = () => {
     showPassword,
     setShowPassword,
     togglePasswordVisibility,
+    routerRegister,
   };
 };

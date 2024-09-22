@@ -33,6 +33,10 @@ export const useRegisterForm = () => {
     },
   });
 
+  const routerLogin = async () => {
+    router.push("/login");
+  }
+
   const onSubmit = async (values: z.infer<typeof registerSchema>) => {
     setError(null);
 
@@ -58,5 +62,6 @@ export const useRegisterForm = () => {
     setShowConfirmPassword,
     togglePasswordVisibility,
     toggleConfirmPasswordVisibility,
+    routerLogin
   };
 };
