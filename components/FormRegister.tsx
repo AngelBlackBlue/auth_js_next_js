@@ -21,15 +21,14 @@ const FormRegister = () => {
     isPending,
     error,
     showPassword,
-    setShowPassword,
     ShowConfirmPassword,
-    setShowConfirmPassword,
     togglePasswordVisibility,
     toggleConfirmPasswordVisibility,
+    routerLogin,
   } = useRegisterForm();
 
   return (
-    <div className="flex items-center justify-center w-full pt-40 ">
+    <div className="flex items-center justify-center w-full pt-20 ">
       <div className="w-96 rounded-md border px-6 py-8 bg-[#25091d]/90 ">
         <h1 className="text-2xl font-bold flex justify-center pb-6">
           Create your account 😎
@@ -143,7 +142,7 @@ const FormRegister = () => {
               <div className="pt-4 flex justify-center">
                 <Button
                   type="submit"
-                  className=" bg-[#791b6b]"
+                  className="bg-[#f555dd]"
                   disabled={isPending}
                 >
                   Submit
@@ -151,6 +150,9 @@ const FormRegister = () => {
               </div>
             </form>
           </Form>
+        </div>
+        <div className="pt-6 flex justify-center">
+          <Button className="px-9 bg-[#791b6b]" onClick={()=> routerLogin()}> Login </Button>
         </div>
       </div>
       <div className="glowBox -z-10"></div>
