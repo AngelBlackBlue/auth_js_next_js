@@ -55,6 +55,8 @@ export default {
               expires: new Date(Date.now() + 60 * 60 * 1000), // 1 hour
             },
           })
+
+          throw new Error("Please check your email");
         }
 
         return user;
