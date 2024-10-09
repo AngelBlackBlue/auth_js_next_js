@@ -4,6 +4,7 @@ import { loginSchema } from "@/validators/login.zod";
 import { prisma } from "@/prisma";
 import bcrypt from "bcryptjs";
 import {nanoid} from "nanoid";
+import { sendEmailVerification } from "./lib/mail";
 
 // Notice this is only an object, not a full Auth.js instance
 export default {
@@ -52,12 +53,14 @@ export default {
             data: {
               identifier: user.email,
               token,
-              expires: new Date(Date.now() + 60 * 60 * 1000), // 1 hour
+              expires: new Date(Date.now() + 60 * 60 * 1000 *24), // 24 hour
             },
           })
 
+          const response = await sendEmailVerification(user.email, token);
           throw new Error("Please check your email");
         }
+
 
         return user;
       },
