@@ -10,6 +10,7 @@ const publicRoutes = [
   "/",
   "/login",
   "/register",
+  "/api/auth/verify-email"
 ]
 
 export default middleware((req) => {
