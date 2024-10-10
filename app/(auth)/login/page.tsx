@@ -1,9 +1,14 @@
 import FormLogin from "@/components/FormLogin"
 
 
-const LoginPage = () => {
+const LoginPage = ({
+  searchParams
+}: {
+  searchParams: { veryfield: string }
+}) => {
+  const isVerified = searchParams.veryfield === 'true'
   return (
-    <FormLogin />
+    <FormLogin isVerified/>
   )
 }
 

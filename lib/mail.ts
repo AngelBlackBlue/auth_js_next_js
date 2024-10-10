@@ -10,7 +10,7 @@ export const sendEmailVerification = async (email: string, token: string) => {
             to: email,
             subject: 'Verify your email',
             html: `<p>Please verify your email by clicking on the following link:</p>
-            <a href="${process.env.AUTH_URL}/api/auth/verify-email?token=${token}">Verify Email</a>`
+            <a href="${process.env.AUTH_URL}/api/auth/verify-email?token=${token}">Verify-Email</a>`
         })
 
         return {
