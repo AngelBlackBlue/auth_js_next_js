@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input";
 import { LockKeyhole, Mail, Eye, EyeOff } from "lucide-react";
 import { useLoginForm } from "@/Hook/useLoginForm";
 
-const FormLogin = () => {
+const FormLogin = ({ isVerified }: { isVerified: boolean }) => {
   const {
     form,
     onSubmit,
@@ -31,6 +31,11 @@ const FormLogin = () => {
         <h1 className="text-2xl font-bold flex justify-center pb-6">
           Login to your account 😎
         </h1>
+        {isVerified && (
+          <p className="absolute text-center text-green-500 text-sm transform -translate-y-4 ">
+            Email verifield, you can now login to your account
+          </p>
+        )}
 
         <div className="pt-2">
           <Form {...form}>
@@ -100,7 +105,13 @@ const FormLogin = () => {
           </Form>
         </div>
         <div className="pt-6 flex justify-center">
-          <Button className="px-9 bg-[#791b6b]" onClick={()=> routerRegister()}> Register </Button>
+          <Button
+            className="px-9 bg-[#791b6b]"
+            onClick={() => routerRegister()}
+          >
+            {" "}
+            Register{" "}
+          </Button>
         </div>
       </div>
       <div className="glowBox -z-10"></div>
