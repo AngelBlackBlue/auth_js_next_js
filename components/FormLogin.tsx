@@ -14,6 +14,18 @@ import { Input } from "@/components/ui/input";
 import { LockKeyhole, Mail, Eye, EyeOff } from "lucide-react";
 import { useLoginForm } from "@/Hook/useLoginForm";
 
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+
 const FormLogin = ({ isVerified }: { isVerified: boolean }) => {
   const {
     form,
@@ -35,6 +47,21 @@ const FormLogin = ({ isVerified }: { isVerified: boolean }) => {
           <p className="absolute text-center text-green-500 text-sm transform -translate-y-4 ">
             Email verifield, you can now login to your account
           </p>
+          // <AlertDialog>
+          //   <AlertDialogTrigger />
+          //   <AlertDialogContent>
+          //     <AlertDialogHeader>
+          //       <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          //       <AlertDialogDescription>
+          //         This action cannot be undone. This will permanently delete
+          //         your account and remove your data from our servers.
+          //       </AlertDialogDescription>
+          //     </AlertDialogHeader>
+          //     <AlertDialogFooter>
+          //       <AlertDialogAction>Continue</AlertDialogAction>
+          //     </AlertDialogFooter>
+          //   </AlertDialogContent>
+          // </AlertDialog>
         )}
 
         <div className="pt-2">
