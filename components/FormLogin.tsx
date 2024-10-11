@@ -122,7 +122,6 @@ const FormLogin = ({ isVerified }: { isVerified: boolean }) => {
               <div className="pt-4 flex justify-center">
                 <Button
                   type="submit"
-                  className="bg-[#f555dd]"
                   disabled={isPending}
                 >
                   Submit
@@ -133,7 +132,6 @@ const FormLogin = ({ isVerified }: { isVerified: boolean }) => {
         </div>
         <div className="pt-6 flex justify-center">
           <Button
-            className="px-9 bg-[#791b6b]"
             onClick={() => routerRegister()}
           >
             {" "}

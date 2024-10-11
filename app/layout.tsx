@@ -46,8 +46,8 @@ const RootLayout = ({
           enableSystem
           disableTransitionOnChange
         >
-          <ModeToggle />
           {children}
+        <ModeToggle />
         </ThemeProvider>
       </body>
     </html>

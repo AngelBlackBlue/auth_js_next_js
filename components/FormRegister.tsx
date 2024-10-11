@@ -142,7 +142,6 @@ const FormRegister = () => {
               <div className="pt-4 flex justify-center">
                 <Button
                   type="submit"
-                  className="bg-[#f555dd]"
                   disabled={isPending}
                 >
                   Submit
@@ -152,7 +151,7 @@ const FormRegister = () => {
           </Form>
         </div>
         <div className="pt-6 flex justify-center">
-          <Button className="px-9 bg-[#791b6b]" onClick={()=> routerLogin()}> Login </Button>
+          <Button className="px-9 " onClick={()=> routerLogin()}> Login </Button>
         </div>
       </div>
       <div className="glowBox -z-10"></div>
