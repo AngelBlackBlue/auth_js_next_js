@@ -21,7 +21,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { LockKeyhole, Mail, Smile, Eye, EyeOff } from "lucide-react";
 import { useRegisterForm } from "@/Hook/useRegisterForm";
-import { ModeToggle } from "./toggle-dark-mode";
+import { ModeToggle } from "./ToggleDarkMode";
 
 const FormRegister = () => {
   const {
@@ -108,7 +108,7 @@ const FormRegister = () => {
                         {...field}
                       />
                     </FormControl>
-                    <FormDescription>
+                    <FormDescription className="absolute ">
                       <FormMessage />
                     </FormDescription>
                   </FormItem>
@@ -140,28 +140,28 @@ const FormRegister = () => {
                         {...field}
                       />
                     </FormControl>
-                    <FormDescription>
+                    <FormDescription className="absolute ">
                       <FormMessage />
                     </FormDescription>
                   </FormItem>
                 )}
               />
 
-              {error && <FormMessage>{error}</FormMessage>}
+              {error && <FormMessage >{error}</FormMessage>}
 
-              <div className="pt-0 md:pt-4 flex justify-center">
-                <Button type="submit" disabled={isPending}>
+              <div className=" pt-0 md:pt-4 flex justify-center">
+                <Button className="w-full" type="submit" disabled={isPending}>
                   Submit
                 </Button>
               </div>
+
             </form>
           </Form>
         </CardContent>
         <CardDescription className="flex justify-center text-l">If you don't have an account, you can create one here.</CardDescription>
         <CardFooter className=" flex justify-center pt-2 md:pt-4">
-          <Button onClick={() => routerLogin()}>
-            {" "}
-            Login{" "}
+          <Button className="w-full" onClick={() => routerLogin()}>
+                     Login
           </Button>
         </CardFooter>
       </Card>
