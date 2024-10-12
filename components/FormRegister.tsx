@@ -10,9 +10,18 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { LockKeyhole, Mail, Smile, Eye, EyeOff } from "lucide-react";
 import { useRegisterForm } from "@/Hook/useRegisterForm";
+import { ModeToggle } from "./toggle-dark-mode";
 
 const FormRegister = () => {
   const {
@@ -28,13 +37,14 @@ const FormRegister = () => {
   } = useRegisterForm();
 
   return (
-    <div className="flex items-center justify-center w-full pt-20 ">
-      <div className="w-96 rounded-md border px-6 py-8 bg-[#25091d]/90 ">
-        <h1 className="text-2xl font-bold flex justify-center pb-6">
-          Create your account 😎
-        </h1>
-
-        <div className="pt-2">
+    <div className="flex items-center justify-center w-full pt-0 md:pt-20">
+      <Card className="w-full sm:w-72 md:w-96 rounded-md border-collapse">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold flex justify-center pb-6 gap-4">
+            Create your account <ModeToggle />
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <FormField
@@ -139,23 +149,24 @@ const FormRegister = () => {
 
               {error && <FormMessage>{error}</FormMessage>}
 
-              <div className="pt-4 flex justify-center">
-                <Button
-                  type="submit"
-                  disabled={isPending}
-                >
+              <div className="pt-0 md:pt-4 flex justify-center">
+                <Button type="submit" disabled={isPending}>
                   Submit
                 </Button>
               </div>
             </form>
           </Form>
-        </div>
-        <div className="pt-6 flex justify-center">
-          <Button className="px-9 " onClick={()=> routerLogin()}> Login </Button>
-        </div>
-      </div>
-      <div className="glowBox -z-10"></div>
+        </CardContent>
+        <CardDescription className="flex justify-center text-l">If you don't have an account, you can create one here.</CardDescription>
+        <CardFooter className=" flex justify-center pt-2 md:pt-4">
+          <Button onClick={() => routerLogin()}>
+            {" "}
+            Login{" "}
+          </Button>
+        </CardFooter>
+      </Card>
     </div>
+
   );
 };
 
