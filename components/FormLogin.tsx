@@ -124,7 +124,7 @@ const FormLogin = ({ isVerified }: { isVerified: boolean }) => {
             </form>
           </Form>
         </CardContent>
-        <CardDescription className="flex justify-center text-l ">If you are not registered, you can register here!</CardDescription>
+        <CardDescription className="flex justify-center text-l">If you are not registered, you can register here!</CardDescription>
         <CardFooter className=" flex justify-center pt-4">
           <Button onClick={() => routerRegister()}> Register </Button>
         </CardFooter>
