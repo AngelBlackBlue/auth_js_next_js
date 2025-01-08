@@ -162,7 +162,7 @@ const FormRegister = () => {
         <CardDescription className="flex justify-center text-l">If you don't have an account, you can create one here.</CardDescription>
         <CardFooter className=" flex justify-center pt-2 md:pt-4">
           <Button className="w-full" onClick={() => routerLogin()}>
-          
+            Login          
           </Button>
         </CardFooter>
       </Card>
