@@ -21,7 +21,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { LockKeyhole, Mail, Smile, Eye, EyeOff } from "lucide-react";
 import { useRegisterForm } from "@/Hook/useRegisterForm";
-import { ModeToggle } from "./ToggleDarkMode";
+import { ModeToggle } from "@/components/ToggleDarkMode";
+
 
 const FormRegister = () => {
   const {
@@ -161,7 +162,7 @@ const FormRegister = () => {
         <CardDescription className="flex justify-center text-l">If you don't have an account, you can create one here.</CardDescription>
         <CardFooter className=" flex justify-center pt-2 md:pt-4">
           <Button className="w-full" onClick={() => routerLogin()}>
-                     Login
+          
           </Button>
         </CardFooter>
       </Card>

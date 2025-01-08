@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/card";
 
 import { ModeToggle } from "@/components/ToggleDarkMode";
-import { ProgressDemo } from "@/components/Progress";
+import { Progress } from "@/components/Progress";
 
 import {
   AlertDialog,
@@ -129,10 +129,8 @@ const FormLogin = ({ isVerified }: { isVerified: boolean }) => {
         </CardDescription>
         <CardFooter className=" flex justify-center pt-4">
           <Button className="w-full" onClick={() => routerRegister()}>
-            {" "}
-            Register{" "}
+            Register
           </Button>
-          {/* <ProgressDemo/> */}
         </CardFooter>
       </Card>
     </div>

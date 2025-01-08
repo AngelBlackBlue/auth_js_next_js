@@ -4,7 +4,7 @@ import * as React from "react"
 
 import { Progress } from "@/components/ui/progress"
 
-export function ProgressDemo() {
+export const Progress = () => {
   const [progress, setProgress] = React.useState(13)
 
   React.useEffect(() => {
